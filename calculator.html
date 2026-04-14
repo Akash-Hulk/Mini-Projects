@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .parent3 {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: auto auto auto auto;
+        gap: 3px;
+    }
+
+    .parent1 {
+        text-align: center;
+        font-size: x-large;
+    }
+
+    .parent2 {
+        text-align: center;
+    }
+
+    #aaa {
+        padding: 20px 100px;
+        border-radius: 20px;
+        border: 2px black solid;
+    }
+
+    .a {
+        padding: 20px 37px;
+        border-radius: 20px;
+        border: 1px black solid;
+
+    }
+
+    body {
+        background: linear-gradient(to top, gray, whitesmoke);
+        height: 100vh;
+    }
+
+    .ab {
+        padding: 20px 41px;
+        border-radius: 20px;
+        border: 1px black solid;
+
+    }
+
+    .ac {
+        padding: 20px 43px;
+        border-radius: 20px;
+        border: 1px black solid;
+    }
+
+    .ad {
+        padding: 20px 45px;
+        border-radius: 20px;
+        border: 1px black solid;
+    }
+
+    .af {
+        padding: 20px 45px;
+        border-radius: 20px;
+        border: 1px black solid;
+    }
+
+    button:active {
+        transform: scale(0.9);
+    }
+
+    .aa {
+        padding: 20px 23px;
+        border-radius: 20px;
+        border: 1px black solid;
+
+    }
+
+    .bor {
+        border: 10px black solid;
+        border-radius: 20px;
+        width: 60vh;
+        position: relative;
+        left: 500px;
+        padding: 10px 15px;
+    }
+
+    button {
+        font: bold;
+    }
+</style>
+
+<body>
+    <div class="parent1">
+        <h1>Calculator</h1>
+    </div>
+    <div class="bor">
+        <div class="parent2">
+            <input type="text" placeholder="Enter calculation (e.g., 5+3*2)" disabled id="aaa">
+        </div><br>
+        <div class="parent3">
+            <div class="student1"><button class="a">(</button></div>
+            <div class="student2"><button class="a"> )</button></div>
+            <div class="student3"><button class="a">%</button></div>
+            <div class="student4"><button class="a" id="all">AC</button></div>
+            <div class="student5"><button class="a">7</button></div>
+            <div class="student6"><button class="a">8</button></div>
+            <div class="student7"><button class="a">9</button></div>
+            <div class="student18"><button class="a ab">÷</button></div>
+            <div class="student8"><button class="a">4</button></div>
+            <div class="student9"><button class="a">5</button></div>
+            <div class="student10"><button class="a">6</button></div>
+            <div class="student19"><button class="a ac">*</button></div>
+            <div class="student11"><button class="a">1</button></div>
+            <div class="student12"><button class="a">2</button></div>
+            <div class="student13"><button class="a">3</button></div>
+            <div class="student20"><button class="a ad">-</button></div>
+            <div class="student14"><button class="a">0</button></div>
+            <div class="student15"><button class="a">.</button></div>
+            <div class="student16"><button class="a" id="equals">=</button></div>
+            <div class="student17"><button class="a af">+</button></div>
+            <div class="student18"><button class="aa" id="clear">Clear</button></div>
+        </div>
+    </div>
+    <script>
+        let screen = document.getElementById('aaa')
+        let button = document.querySelectorAll('.a')
+        for (let btn of button) {
+            btn.onclick = () => {
+                screen.value += btn.innerHTML
+            }
+        }
+        let ac = document.getElementById('all')
+        ac.onclick = () => {
+            screen.value = ""
+        }
+        let clear = document.getElementById('clear')
+        clear.onclick = () => {
+            screen.value = screen.value.slice(0, -1)
+        }
+        let equals = document.getElementById('equals')
+        equals.onclick = () => {
+            screen.value = eval(screen.value)
+        }
+
+    </script>>
+</body>
+
+</html>
