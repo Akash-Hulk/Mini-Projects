@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        font-size: x-large;
+        font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    body {
+        background: linear-gradient(to bottom, black, gray);
+        height: 100vh;
+        color: white;
+    }
+
+    button {
+        padding: 10px 40px;
+        border-radius: 20px;
+        border: none;
+    }
+
+    .aaa {
+        padding: 10px 30px;
+        border-radius: 17px;
+        border: none;
+    }
+
+    button:active {
+        transform: scale(0.9);
+    }
+
+    .main1 {
+        padding-left: 170px;
+    }
+
+    .border {
+        border: 6px rgb(227, 217, 217) solid;
+        border-radius: 20px;
+        width: 60vh;
+        height: 43vh;
+        position: relative;
+        left: 500px;
+        top: 22vh;
+    }
+</style>
+
+<body>
+    <div class="border">
+        <div class="main">
+            <h1>Age Calculator</h1>
+            <p> your age is: <span></span></p>
+            <form action="" class="age-form">
+                <label for="">select your dob</label>
+                <input type="date" name="dob" class="aaa"><br><br>
+                <div class="main1">
+                    <button>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        let form = document.querySelector('.age-form')
+        let span = document.querySelector('span')
+        form.onsubmit = (e) => {
+            let dobirth = e.target.dob.value
+            let yob = new Date(dobirth).getFullYear()
+            let cyear = new Date().getFullYear()
+            span.innerText = cyear - yob
+            e.preventDefault()
+        }
+
+    </script>
+</body>
+
+</html>
