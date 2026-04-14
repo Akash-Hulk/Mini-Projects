@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otp generater</title>
+</head>
+<style>
+    .otp {
+        padding: 15px 60px;
+        border-radius: 20px;
+        border: 1px black solid;
+    }
+
+    .otp:active {
+        transform: scale(0.9);
+        background-color: rgb(233, 229, 223);
+    }
+
+    .but {
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: 1px black solid;
+
+    }
+
+    .input {
+        padding: 10px 30px;
+        border-radius: 15px;
+    }
+
+    .chapter2 {
+        display: flex;
+        justify-content: center;
+        column-gap: 10px;
+    }
+
+    .chapter {
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
+
+    }
+
+    button:active {
+        transform: scale(0.9);
+    }
+
+    body {
+        background: linear-gradient(to bottom, rgb(193, 193, 230), white);
+        height: 100vh;
+
+    }
+
+    .parent1 {
+        text-align: center;
+        padding-right: 100px;
+        padding-bottom: 40px;
+    }
+
+    h1 {
+        text-align: center;
+        padding-bottom: 100px;
+    }
+
+    .chapter {
+        border: 2px rgb(82, 44, 44) double;
+        width: 60vh;
+        height: 50vh;
+        position: relative;
+        top: 30vh;
+        left: 60vh;
+    }
+</style>
+
+<body>
+    <div class="chapter">
+        <h1><u>Generate Otp</u></h1>
+        <div class="parent1">
+            <button class="otp">Generate Otp</button>
+        </div>
+        <div class="chapter2">
+            <div class="parent2">
+                <form action="">
+                    <input type="text" name="send" placeholder="Enter otp....." class="input">
+                    <button class="but">Validate Otp</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script>
+        let buttons = document.getElementsByTagName('button')
+        let otp
+        //generate otp
+        buttons[0].onclick = () => {
+            let randomnum = Math.round(Math.random() * 10000)
+            alert(`yor otp is ${randomnum}`)
+            otp = randomnum
+        }
+
+        //validate Otp
+
+        let form = document.querySelector('form')
+        //e.prevent Default
+        form.onsubmit = (e) => {
+            let enteredotp = e.target.send.value
+            if (Number(enteredotp) === otp) {
+                alert("otp is valid")
+            }
+            else {
+                alert("otp is invalid")
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
